@@ -69,10 +69,12 @@ class ConfigParser {
 		return type;
 	}
 	
-	handleRecursiveProperty(name, schemaProp, actualValue, result) {
-		if(typeof actualValue === "object" && !(actualValue instanceof Array) && !("type" in schemaProp)) {
+	handleRecursiveProperty(name, schemaProp, configProp, result) {
+		const isConfigAnObjectOrNotProvided = (typeof configProp === "object" || typeof configProp === "undefined");
+		
+		if(isConfigAnObjectOrNotProvided && !(configProp instanceof Array) && !("type" in schemaProp)) {
 			result[name] = {};
-			this.walkConfig(actualValue, schemaProp, result[name]);
+			this.walkConfig(configProp || {}, schemaProp, result[name]);
 			return true;
 		}
 		
@@ -100,7 +102,7 @@ class ConfigParser {
 			const actualValue = config[name];						
 			
 			if(this.handleRecursiveProperty(name, schemaProp, actualValue, result)) {
-				return;
+				continue;
 			}
 			
 			const schemaType = this.getSchemaType(schemaProp);

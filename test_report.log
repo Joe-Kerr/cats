@@ -14,6 +14,9 @@
     √ ConfigParser throws if config props have no schema
     √ ConfigParser throws if default value does not match schema type
 
+  ConfigParser - bug fixes
+    √ ConfigParser default values of recursive schema are applied when no config is provided
+
   ConfigParser - shorthand notation parameterised tests
     √ type string, w/o default, not required
     √ type string, w default, not required
@@ -46,6 +49,6 @@
     √ ConfigParserShorthand throws if default value is a non-empty object or array
 
 
-  38 passing 
+  39 passing 
   1 pending
 

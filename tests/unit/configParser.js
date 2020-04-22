@@ -91,3 +91,31 @@ test("ConfigParser throws if config props have no schema", ()=>{
 test("ConfigParser throws if default value does not match schema type", ()=>{
 	assert.throws(()=>{ parseConfig({}, {test: {type: "number", default: "123"}}); }, {message: /must be of type/});
 });
+
+
+suite("ConfigParser - bug fixes");
+
+test("ConfigParser default values of recursive schema are applied when no config is provided", ()=>{
+	const schema = {
+		recursive: {
+			a: {type: "number", default: 123},
+			recursive: {
+				b: {type: "string", default: "abc"}
+			}
+		},
+		
+		recursive2: {
+			c: {type: "boolean", default: false}
+		}
+	};
+	
+	assert.deepEqual(parseConfig({}, schema), {
+		recursive: {
+			a: 123, 
+			recursive: {b: "abc"}
+		},
+		recursive2: {
+			c: false
+		}
+	});
+});
