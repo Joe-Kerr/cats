@@ -1,0 +1,51 @@
+
+
+  ConfigParser
+    √ ConfigParser constructor assigns shorthandParser service
+    √ ConfigParser returns expected config object
+    √ ConfigParser fills defaults if not provided
+    √ ConfigParser does not type check if default type null
+    √ ConfigParser processes recursive object properties
+    - Untestable?: ConfigParser throws if a config prop has an unkown type
+    √ ConfigParser throws if non-null type mismatches schema type
+    √ ConfigParser throws if a required prop is not provided
+    √ ConfigParser throws if type property missing on schema
+    √ ConfigParser throws if a schema prop has an unkown type
+    √ ConfigParser throws if config props have no schema
+    √ ConfigParser throws if default value does not match schema type
+
+  ConfigParser - shorthand notation parameterised tests
+    √ type string, w/o default, not required
+    √ type string, w default, not required
+    √ type string, w default, required
+    √ type string, w/o default, required
+    √ type number, w/o default, not required
+    √ type number, w default, not required
+    √ type number, w default, required
+    √ type number, w/o default, required
+    √ type number, w/o default, not required
+    √ type number, w default, not required
+    √ type number, w default, required
+    √ type number, w/o default, required
+    √ type boolean, w/o default, not required
+    √ type boolean, w default, not required
+    √ type boolean, w default, required
+    √ type boolean, w/o default, required
+    √ type boolean, w/o default, not required
+    √ type boolean, w default, not required
+    √ type boolean, w default, required
+    √ type boolean, w/o default, required
+    √ type object, w/o default, not required
+    √ type object, w default, not required
+    √ type object, w default, required
+    √ type object, w/o default, required
+
+  ConfigParser - shorthand notation manual tests
+    √ ConfigParserShorthand.parseNumberFromString handles ints and floats
+    √ ConfigParserShorthand.parseNumberFromString throws if parsing as int/float fails
+    √ ConfigParserShorthand throws if default value is a non-empty object or array
+
+
+  38 passing 
+  1 pending
+

@@ -1,0 +1,37 @@
+{
+  "name": "cats4js",
+  "version": "0.1.0",
+  "description": "Common authoring tools taking care of common, tedious and/or repetitive package authoring tasks.",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "author": {
+    "name": "Joe Kerr",
+    "url": "https://github.com/Joe-Kerr/"
+  },
+  "license": "MIT",
+  "repository": "github:Joe-Kerr/cats",
+  "keywords": [
+    "development",
+    "module",
+    "package",
+    "plugin",
+    "authoring"
+  ],
+  "sideEffects": false,
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "babel-loader": "^8.1.0",
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "dev:test:unit": "node ./node_modules/mocha/bin/mocha --require babel-polyfill --require babel-register --ui qunit --recursive ./tests/unit/**/*.js",
+    "dev:build": "npx webpack --env catsjs"
+  }
+}
