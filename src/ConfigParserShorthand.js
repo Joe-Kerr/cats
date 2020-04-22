@@ -68,6 +68,19 @@ class ConfigParserShorthand {
 		return value;		
 	}
 	
+	separateTypeAndDefault(string) {
+		const firstColonIndex = string.indexOf(":");
+		
+		if(firstColonIndex === -1) {
+			return [string, undefined];
+		}
+		
+		return [
+			string.substring(0, firstColonIndex),
+			string.substring(firstColonIndex+1, string.length)
+		];
+	}
+	
 	parse(propString) {
 		const prop = {type: null, default: undefined, required: false};
 		const length = propString.length;
@@ -78,7 +91,7 @@ class ConfigParserShorthand {
 			wip = propString.substring(0, length-1);
 		}
 		
-		wip = wip.split(":");
+		wip = this.separateTypeAndDefault(wip);
 
 		prop.type = wip[0];
 		

@@ -48,7 +48,10 @@
     √ ConfigParserShorthand.parseNumberFromString throws if parsing as int/float fails
     √ ConfigParserShorthand throws if default value is a non-empty object or array
 
+  ConfigParser - shorthand notation bug fixes
+    √ ConfigParserShorthand properly parses default strings with colons
 
-  39 passing 
+
+  40 passing 
   1 pending
 

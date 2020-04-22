@@ -85,3 +85,12 @@ test("ConfigParserShorthand throws if default value is a non-empty object or arr
 	assert.throws(()=>{ parseConfig({}, {test: "object:[1]"}); }, {message: /failed to parse shorthand object/});
 	assert.throws(()=>{ parseConfig({}, {test: "object:{a:1}"}); }, {message: /failed to parse shorthand object/});
 });
+
+
+suite("ConfigParser - shorthand notation bug fixes");
+
+test("ConfigParserShorthand properly parses default strings with colons", ()=>{
+	assert.equal(
+		parseConfig({}, {test: "string:http://localhost:8125/"}).test, "http://localhost:8125/"
+	);
+});
