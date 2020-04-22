@@ -1,6 +1,6 @@
 {
   "name": "cats4js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Common authoring tools taking care of common, tedious and/or repetitive package authoring tasks.",
   "main": "./src/index.js",
   "module": "./src/index.js",
