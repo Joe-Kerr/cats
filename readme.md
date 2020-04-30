@@ -45,6 +45,9 @@ Some tools of cats4js are intended for use in production environments. Therefore
 
 # Versions
 
+## 0.1.3
+- Fix: Manual hotfix of third-party security issue
+
 ## 0.1.2
 - Fix: Default values of shorthand strings were cut off after the second colon
 
