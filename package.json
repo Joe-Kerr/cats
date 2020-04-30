@@ -31,7 +31,7 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "dev:test:unit": "node ./node_modules/mocha/bin/mocha --require babel-polyfill --require babel-register --ui qunit --recursive ./tests/unit/**/*.js",
-    "dev:build": "npx webpack --env catsjs"
+    "dev:test:unit": "node ./node_modules/mocha/bin/mocha --require @babel/polyfill --require @babel/register --ui qunit --recursive ./tests/unit/**/*.js",
+    "dev:build": "npx webpack --env cats4js"
   }
 }
